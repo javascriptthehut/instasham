@@ -1,4 +1,4 @@
-const paths = require('urlPaths.js');
+const paths = require('url-paths.js');
 
 function handler(req, res){
 
@@ -19,5 +19,4 @@ var server = require('server.js');
 
 module.exports = {
   handler: handler
-
 };
