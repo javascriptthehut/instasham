@@ -14,16 +14,16 @@ body {
     width: 37.5vw;
 }
 
-.w6 {
-    width: 75vw;
+.w8 {
+    width: 100vw;
 }
 
 .h1 {
-    height: 12.5vw;
+    height: 20vh;
 }
 
 .h2 {
-    height: 25vw;
+    height: 40vh;
 }
 
 .row {
