@@ -14,6 +14,10 @@ body {
     width: 37.5vw;
 }
 
+.w6 {
+    width: 75vw;
+}
+
 .h1 {
     height: 12.5vw;
 }
@@ -38,4 +42,18 @@ div {
     margin: 0px;
     background-size: cover;
     background-image: url('http://images.nationalgeographic.com/wpf/media-live/photos/000/936/cache/bear-road-denali_93621_990x742.jpg');
+}
+
+[id*=description] {
+    background-image: none;
+    background-color: white;
+}
+
+#addImage {
+    background-color: red;
+    background-image: none;
+}
+
+#footer {
+    background-color: blue;
 }
