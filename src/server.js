@@ -1,5 +1,5 @@
 const http = require('http');
-var handler = require('handler.js');
+const handler = require('handler.js');
 
 const server = http.createServer(handler);
 
