@@ -20,8 +20,14 @@ function public(req, res){
   });
 }
 
-function get(req, res)
+function get(req, res){
+  client.get('id:all', (err, reply) =>{
+    if (err) throw err;
+    console.log(reply)
+  })
+}
 
+function 
 
 module.exports = {
   indexURL: indexURL,
