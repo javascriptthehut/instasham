@@ -1,9 +1,8 @@
-let image = '';
-let username = '';
-let currentTime = '';
-
-const constructUrl = () => {
-  return 'username=' + username + '&imageUrl=' + image + '&currentTime=' + currentTime;
+const constructSend = () => {
+  const username = document.getElementById('username').value;
+  const imageUrl = document.getElementById('imageurl').value;
+  const time = Date.now();
+  return 'username=' + username + '&imageUrl=' + imageUrl + '&currentTime=' + time;
 };
 
 let xhrGet = () => {
@@ -25,7 +24,11 @@ let xhrPost = () => {
     }
   };
   xhr.open('post', '/post');
-  xhr.send(constructUrl());
+  xhr.send(constructSend());
 };
 
 window.onload = xhrGet();
+
+document.getElementById('submit').addEventListener('click', () => {
+  xhrPost();
+});
