@@ -5,17 +5,15 @@ function handler(req, res){
   const url = req.url;
 
   if(url === '/'){
-
+    paths.index(req, res);
   } else if (url.includes('public')){
-
+    paths.publicURL(req, res);
   } else if (url.includes('get')){
-
+    paths.get(req, res);
   } else if (url.includes('post')){
-
+    paths.post(req);
   }
 }
-
-var server = require('server.js');
 
 module.exports = {
   handler: handler
