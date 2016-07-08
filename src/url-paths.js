@@ -3,8 +3,7 @@ const client = require('./redis.js').client; //this module allow javascript to i
 const qs = require('querystring');
 
 function index(req, res){
-  console.log('requested index');
-  fs.readFile(`${__dirname}/index.html`, (err, data) => {
+  fs.readFile(`${__dirname}/../public/index.html`, (err, data) => {
     if (err) throw err;
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.end(data);
@@ -14,7 +13,7 @@ function index(req, res){
 function publicURL(req, res){
   const path = req.url.split('public')[1];
   const ext = req.url.split('.')[1];
-  fs.readFile(`${__dirname}/public${path}`, (err, data) => {
+  fs.readFile(`${__dirname}/../public${path}`, (err, data) => {
     if (err) throw err;
     res.writeHead(200, {'Content-Type': `text/${ext}`});
     res.end(data);
