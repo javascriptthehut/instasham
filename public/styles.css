@@ -44,6 +44,11 @@ div {
     background-image: url('http://images.nationalgeographic.com/wpf/media-live/photos/000/936/cache/bear-road-denali_93621_990x742.jpg');
 }
 
+.containerDark {
+    -webkit-filter: brightness(0.5);
+    filter: brightness(0.5);
+}
+
 [id*=description] {
     background-image: none;
     background-color: white;
