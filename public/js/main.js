@@ -8,7 +8,7 @@ const constructSend = () => {
 let xhrGet = () => {
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
-    if(xhr.readystate === 4 & xhr.status === 200) {
+    if(xhr.readyState === 4 && xhr.status === 200) {
       console.log(xhr.responseText);
     }
   };
@@ -19,7 +19,7 @@ let xhrGet = () => {
 let xhrPost = () => {
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
-    if(xhr.readystate === 4 & xhr.status === 200) {
+    if(xhr.readyState === 4 && xhr.status === 200) {
       console.log(xhr.responseText);
     }
   };
