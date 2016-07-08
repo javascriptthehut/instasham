@@ -22,7 +22,7 @@ function publicURL(req, res){
 
 function get(req, res){
   client.lrange('id:all', -12, -1, (err, lastTwelve) => { //the get method will give back an array from redis.
-    console.log('got', lastTwelve)
+    console.log('got', lastTwelve);
     if (err) throw err;
     const promises = lastTwelve.map((id) => {
       return new Promise((resolve, reject) => {
@@ -44,7 +44,7 @@ function get(req, res){
   });
 }
 
-function post(req){
+function post(req, res){
   let body = '';
   req.on('data', (data) => {
     body += data; //data comes in bits, in a stream. every bit that comes id then added to the body. the empty string will stringefy the data (which may come as buffer)
@@ -54,12 +54,13 @@ function post(req){
   });
   req.on('end', () => {
     const postData = qs.parse(body);  //parsing from a query string (body) into an object
+    console.log(postData, 'posted');
     client.lindex('id:all', -1, (err, reply) => { //getting the key(id:all), will get the value of that key. the lindex command gets the key form a list and a specific key
       if (err) throw err;
       if(!reply) {
         reply = 0;
       }
-      const data = reply + 1;
+      const data = Number(reply) + 1;
       client.rpush('id:all', data);
       client.hmset('id:' + data, postData); //hmset sets the key's value as a hash table.
 
