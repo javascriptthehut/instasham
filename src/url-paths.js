@@ -65,7 +65,7 @@ function post(req, res){
         if (rerr) throw rerr;
         console.log(HMreply);
         res.writeHead(200, {'Content-Type': 'text/plain'});
-        res.end(`${HMreply} posted`);
+        res.end(`post response: ${HMreply}`);
       }); //hmset sets the key's value as a hash table.
 
     });

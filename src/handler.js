@@ -11,7 +11,7 @@ function handler(req, res){
   } else if (url.includes('get')){
     paths.get(req, res);
   } else if (url.includes('post')){
-    paths.post(req);
+    paths.post(req, res);
   }
 }
 
