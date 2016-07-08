@@ -62,7 +62,11 @@ function post(req, res){
       }
       const data = Number(reply) + 1;
       client.rpush('id:all', data);
-      client.hmset('id:' + data, postData); //hmset sets the key's value as a hash table.
+      client.hmset('id:' + data, postData, (rerr) => {
+        if (rerr) throw rerr;
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.end('post received');
+      }); //hmset sets the key's value as a hash table.
 
     });
   });
