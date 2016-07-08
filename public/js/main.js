@@ -6,7 +6,7 @@ const constructUrl = () => {
   return 'username=' + username + '&imageUrl=' + imageUrl + '&currentTime=' + currentTime;
 };
 
-xhrGet => {
+let xhrGet = () => {
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
     if(xhr.readystate === 4 & xhr.status === 200) {
@@ -17,7 +17,7 @@ xhrGet => {
   xhr.send();
 };
 
-xhrPost => {
+let xhrPost = () => {
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
     if(xhr.readystate === 4 & xhr.status === 200) {
