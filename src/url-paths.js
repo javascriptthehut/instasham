@@ -22,13 +22,8 @@ function publicURL(req, res){
 
 function get(req, res){
   client.lrange('id:all', -12, -1, (err, lastTwelve) => { //the get method will give back an array from redis.
+    console.log('got', lastTwelve)
     if (err) throw err;
-
-    if (lastTwelve.length === 0){
-      res.writeHead(200, {'Content-Type': 'application/json'});
-      res.end(JSON.stringify([]));
-    }
-
     const promises = lastTwelve.map((id) => {
       return new Promise((resolve, reject) => {
         client.hgetall('id:' + id, (error, hash)=>{
