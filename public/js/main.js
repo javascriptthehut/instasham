@@ -1,16 +1,16 @@
-let imageUrl;
-let username;
-let currentTime;
+let image = '';
+let username = '';
+let currentTime = '';
 
 const constructUrl = () => {
-  return 'username=' + username + '&imageUrl=' + imageUrl + '&currentTime=' + currentTime;
+  return 'username=' + username + '&imageUrl=' + image + '&currentTime=' + currentTime;
 };
 
 let xhrGet = () => {
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
     if(xhr.readystate === 4 & xhr.status === 200) {
-      //
+      console.log(xhr.response);
     }
   };
   xhr.open('get', '/get');
@@ -27,3 +27,5 @@ let xhrPost = () => {
   xhr.open('post', '/post');
   xhr.send(constructUrl());
 };
+
+window.onload = xhrGet();
