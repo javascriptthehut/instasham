@@ -1,4 +1,12 @@
-xhrGet => {
+let imageUrl;
+let username;
+let currentTime;
+
+const constructUrl = () => {
+  return 'username=' + username + '&imageUrl=' + imageUrl + '&currentTime=' + currentTime;
+};
+
+let xhrGet = () => {
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
     if(xhr.readystate === 4 & xhr.status === 200) {
@@ -9,13 +17,13 @@ xhrGet => {
   xhr.send();
 };
 
-xhrPost => {
+let xhrPost = () => {
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
     if(xhr.readystate === 4 & xhr.status === 200) {
-      //
+      console.log(xhr.response);
     }
   };
   xhr.open('post', '/post');
-  xhr.send(/*data*/);
+  xhr.send(constructUrl());
 };
