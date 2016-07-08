@@ -1,6 +1,6 @@
 const constructSend = () => {
   const username = document.getElementById('username').value;
-  const imageUrl = document.getElementById('imageurl').value;
+  const imageUrl = encodeURIComponent(document.getElementById('imageurl').value);
   const time = Date.now();
   return 'username=' + username + '&imageUrl=' + imageUrl + '&currentTime=' + time;
 };
@@ -9,7 +9,8 @@ let xhrGet = () => {
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
     if(xhr.readyState === 4 && xhr.status === 200) {
-      console.log(xhr.responseText);
+      const response = JSON.parse(xhr.responseText);
+      pushResults(response);
     }
   };
   xhr.open('get', '/get');
@@ -20,8 +21,8 @@ let xhrPost = () => {
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
     if(xhr.readyState === 4 && xhr.status === 200) {
-      var response = JSON.parse(xhr.responseText);
-      pushResults(response);
+      console.log(xhr.responseText);
+      location.reload();
     }
   };
   xhr.open('post', '/post');

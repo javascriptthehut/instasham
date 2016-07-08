@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "istanbul cover test/server-test.js",
+    "test": "istanbul cover test/tests.js",
     "start": "nodemon src/server.js"
   },
   "repository": {
