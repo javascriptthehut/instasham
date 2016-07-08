@@ -1,4 +1,4 @@
-const paths = require('url-paths.js');
+const paths = require('./url-paths.js');
 
 function handler(req, res){
 
