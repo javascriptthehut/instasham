@@ -62,10 +62,10 @@ function post(req, res){
       }
       const data = Number(reply) + 1;
       client.rpush('id:all', data);
-      client.hmset('id:' + data, postData, (rerr) => {
+      client.hmset('id:' + data, postData, (rerr, HMreply) => {
         if (rerr) throw rerr;
         res.writeHead(200, {'Content-Type': 'text/plain'});
-        res.end('post received');
+        res.end(`${HMreply} posted`);
       }); //hmset sets the key's value as a hash table.
 
     });
