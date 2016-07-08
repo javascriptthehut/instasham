@@ -9,7 +9,7 @@ let xhrGet = () => {
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
     if(xhr.readyState === 4 && xhr.status === 200) {
-      var response = JSON.parse(xhr.responseText);
+      const response = JSON.parse(xhr.responseText);
       pushResults(response);
     }
   };
@@ -21,6 +21,7 @@ let xhrPost = () => {
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
     if(xhr.readyState === 4 && xhr.status === 200) {
+      console.log(xhr.responseText);
       location.reload();
     }
   };

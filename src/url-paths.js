@@ -22,7 +22,6 @@ function publicURL(req, res){
 
 function get(req, res){
   client.lrange('id:all', -12, -1, (err, lastTwelve) => { //the get method will give back an array from redis.
-    console.log('got', lastTwelve);
     if (err) throw err;
     const promises = lastTwelve.map((id) => {
       return new Promise((resolve, reject) => {
@@ -64,6 +63,7 @@ function post(req, res){
       client.rpush('id:all', data);
       client.hmset('id:' + data, postData, (rerr, HMreply) => {
         if (rerr) throw rerr;
+        console.log(HMreply);
         res.writeHead(200, {'Content-Type': 'text/plain'});
         res.end(`${HMreply} posted`);
       }); //hmset sets the key's value as a hash table.
