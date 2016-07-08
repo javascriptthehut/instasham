@@ -20,7 +20,8 @@ let xhrPost = () => {
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
     if(xhr.readyState === 4 && xhr.status === 200) {
-      console.log(xhr.responseText);
+      var response = JSON.parse(xhr.responseText);
+      pushResults(response);
     }
   };
   xhr.open('post', '/post');
