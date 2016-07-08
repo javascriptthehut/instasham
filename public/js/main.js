@@ -1,6 +1,6 @@
 const constructSend = () => {
   const username = document.getElementById('username').value;
-  const imageUrl = document.getElementById('imageurl').value;
+  const imageUrl = encodeURIComponent(document.getElementById('imageurl').value);
   const time = Date.now();
   return 'username=' + username + '&imageUrl=' + imageUrl + '&currentTime=' + time;
 };
