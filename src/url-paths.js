@@ -56,6 +56,9 @@ function post(req){
     const postData = qs.parse(body);  //parsing from a query string (body) into an object
     client.lindex('id:all', -1, (err, reply) => { //getting the key(id:all), will get the value of that key. the lindex command gets the key form a list and a specific key
       if (err) throw err;
+      if(!reply) {
+        reply = 0;
+      }
       const data = reply + 1;
       client.rpush('id:all', data);
       client.hmset('id:' + data, postData); //hmset sets the key's value as a hash table.
