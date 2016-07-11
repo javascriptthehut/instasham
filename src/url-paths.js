@@ -1,3 +1,5 @@
+'use strict';
+
 const fs = require('fs');
 const client = require('./redis.js').client; //this module allow javascript to interact with the redis db
 const qs = require('querystring');
@@ -21,9 +23,9 @@ function publicURL(req, res){
 }
 
 function get(req, res){
-  client.lrange('id:all', -12, -1, (err, lastTwelve) => { //the get method will give back an array from redis.
+  client.lrange('id:all', -13, -1, (err, lastThirteen) => { //the get method will give back an array from redis.
     if (err) throw err;
-    const promises = lastTwelve.map((id) => {
+    const promises = lastThirteen.map((id) => {
       return new Promise((resolve, reject) => {
         client.hgetall('id:' + id, (error, hash)=>{
           if (error) reject(error);
