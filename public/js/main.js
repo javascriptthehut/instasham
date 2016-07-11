@@ -31,7 +31,11 @@ let xhrPost = () => {
 window.onload = xhrGet();
 
 window.addEventListener('keydown', (e) => {
-  if(e.keyCode === 13 && document.getElementById('imageurl').value.length > 4 && document.getElementById('username').value.length > 0){
+  if(e.keyCode === 13 && checkURL(document.getElementById('imageurl').value) && document.getElementById('username').value.length > 0){
     xhrPost();
   }
 });
+
+function checkURL(url) {
+  return(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
+}
