@@ -1,3 +1,5 @@
+//setting up the handler function. functions in handler are set up in url-paths
+
 const paths = require('./url-paths.js');
 
 function handler(req, res){
