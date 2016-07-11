@@ -1,5 +1,6 @@
 body {
     margin: 0px;
+    /*background-color: rgb(255,245,148);*/
 }
 
 .w1 {
@@ -65,18 +66,18 @@ div {
 .input {
 	position: relative;
 	display: inline-block;
-  margin: 0.9em 1em 1em;
+  margin: 1.3em 1em 1em;
 
 }
 
 .input_field {
-  border: none;
-  float: right;
-	padding: 0.4em 4em;
-	width: 50%;
-	background: transparent;
-	color: #AFB5BB;
-	font-size: 1.55em;
+  text-align: left;
+border: none;
+float: right;
+width: 100%;
+background: transparent;
+color: #AFB5BB;
+font-size: 1.55em;
 }
 
 .input_field:focus {
@@ -91,7 +92,7 @@ div {
   font-size: 70.25%;
   font-weight: light;
   font-family: helvetica;
-  color: #6a7989;
+  color: rgb(255,105,83);
   padding: 0 1em;
 
 }
@@ -99,7 +100,7 @@ div {
 .input_label_content {
 	position: relative;
 	display: block;
-	padding: 1.3em 0;
+	padding: 1.2em 0;
 	width: 100%;
   -webkit-transition: -webkit-transform 0.3s;
 	transition: transform 0.3s;
