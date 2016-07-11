@@ -1,3 +1,5 @@
+'use strict';
+
 const fs = require('fs');
 const client = require('./redis.js').client; //this module allow javascript to interact with the redis db
 const qs = require('querystring');
