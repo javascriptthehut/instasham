@@ -59,6 +59,14 @@ div {
   background-image: none;
 }
 
+.description {
+background-image: url('../public/background.png');
+color: rgb(209,240,243);
+font-family: 'Raleway', sans-serif;
+font-weight:lighter;
+text-align: center;
+}
+
 #footer {
     background-color: blue;
     background-image: none;
@@ -100,7 +108,7 @@ font-size: 1.55em;
 .input_label_content {
 	position: relative;
 	display: block;
-	padding: 1.2em 0;
+	padding: 1em 0;
 	width: 100%;
   -webkit-transition: -webkit-transform 0.3s;
 	transition: transform 0.3s;
@@ -111,7 +119,7 @@ font-size: 1.55em;
 	content: '';
 	position: absolute;
 	left: 0;
-	width: 90%;
+	width: 115%;
 	height: 2px;
 	background: #6a7989;
 }
