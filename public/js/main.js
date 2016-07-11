@@ -21,7 +21,6 @@ let xhrPost = () => {
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
     if(xhr.readyState === 4 && xhr.status === 200) {
-      console.log(xhr.responseText);
       location.reload();
     }
   };
@@ -31,6 +30,12 @@ let xhrPost = () => {
 
 window.onload = xhrGet();
 
-document.getElementById('submit').addEventListener('click', () => {
-  xhrPost();
+// document.getElementById('submit').addEventListener('click', () => {
+//   xhrPost();
+// });
+
+window.addEventListener('keydown', (e) => {
+  if(e.keyCode === 13){
+    xhrPost();
+  }
 });
