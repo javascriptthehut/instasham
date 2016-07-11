@@ -17,6 +17,4 @@ function handler(req, res){
   }
 }
 
-module.exports = {
-  handler: handler
-};
+module.exports = handler;
