@@ -1,10 +1,8 @@
 'use strict';
 
 const fs = require('fs');
-const redis = require('./redis.js'); //this module allow javascript to interact with the redis db
+const client = require('./redis.js').client; //this module allow javascript to interact with the redis db
 const qs = require('querystring');
-
-const client = redis.createClient(process.env.REDISCLOUD_URL, {no_ready_check: true});
 
 function index(req, res){
   fs.readFile(`${__dirname}/../public/index.html`, (err, data) => {
