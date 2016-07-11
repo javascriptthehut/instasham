@@ -114,12 +114,9 @@ font-size: 1.55em;
 	width: 90%;
 	height: 2px;
 	background: #6a7989;
-	-webkit-transition: -webkit-transform 0.3s; */
- 	transition: transform 0.3s;
 }
 
-.input_field:focus + .input_label .input_label_content,
-.input--filled .input_label_content {
+.input_field:focus + .input_label .input_label_content{
 	-webkit-transform: translate3d(0, -90%, 0);
 	transform: translate3d(0, -90%, 0);
 }
